@@ -9,5 +9,5 @@ my newest simple vim environment
 git clone http://github.com/f/vimme.git ~/.vimme
 ln -s ~/.vimme/.vimrc .vimrc
 ln -s ~/.vimme/.vim .vim
-vim +BundleInstall +qall -u ~/.vimme/.vim/bundles.vim
+vim +BundleInstall +qall # don't worry about colorscheme warning, go on
 ```

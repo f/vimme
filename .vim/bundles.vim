@@ -3,7 +3,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
