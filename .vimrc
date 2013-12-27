@@ -32,14 +32,20 @@ set undolevels=1000
 set noswapfile
 set nobackup
 set number
+set relativenumber
 set linespace=3
+
+" Enable mouse events
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 " Bindings
 nmap <Tab> :CtrlPBuffer<CR>
 map <C-h> :CtrlPLine<CR>
 imap <S-Tab> <Esc><<i
 
-" Subsettings
+  " Subsettings
 let g:netrw_liststyle=3
 
 set laststatus=2
