@@ -31,7 +31,7 @@ set history=1000
 set undolevels=1000
 set noswapfile
 set nobackup
-set number
+" set number
 set relativenumber
 set linespace=3
 
@@ -45,11 +45,16 @@ nmap <Tab> :CtrlPBuffer<CR>
 map <C-h> :CtrlPLine<CR>
 imap <S-Tab> <Esc><<i
 
-  " Subsettings
+" Subsettings
 let g:netrw_liststyle=3
 
 set laststatus=2
+let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
+let g:airline_detect_paste=1
+let g:airline_detect_modified=1
 
 " Theme
 colorscheme molokai
+let g:airline_theme="dark"
+
