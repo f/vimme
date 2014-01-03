@@ -31,9 +31,13 @@ set history=1000
 set undolevels=1000
 set noswapfile
 set nobackup
-" set number
-set relativenumber
 set linespace=3
+set scrolloff=3
+set backspace=indent,eol,start
+set laststatus=2
+
+set number
+set relativenumber
 
 " Enable mouse events
 set mouse=a
@@ -44,17 +48,20 @@ map <ScrollWheelDown> <C-E>
 nmap <Tab> :CtrlPBuffer<CR>
 map <C-h> :CtrlPLine<CR>
 imap <S-Tab> <Esc><<i
+nmap - :NERDTreeToggle<CR>
 
 " Subsettings
-let g:netrw_liststyle=3
+let NERDTreeShowBookmarks=1
 
-set laststatus=2
 let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
 let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
 " Theme
-colorscheme molokai
-let g:airline_theme="dark"
+colorscheme base16-railscasts
+let g:airline_theme="base16"
 
