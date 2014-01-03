@@ -31,12 +31,17 @@ set history=1000
 set undolevels=1000
 set noswapfile
 set nobackup
-" set number
-set relativenumber
 set linespace=3
+set scrolloff=3
+set cursorline
+
+set relativenumber 
+set number
 
 " Enable mouse events
-set mouse=a
+if has("mouse")
+  set mouse=a
+endif
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
@@ -49,12 +54,21 @@ imap <S-Tab> <Esc><<i
 let g:netrw_liststyle=3
 
 set laststatus=2
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
+let g:airline#extensions#syntastic#enabled=1
+let g:airline#extensions#virtualenv#enabled=1
+let g:airline_powerline_fonts=0
+let g:airline_left_sep=""
+let g:airline_right_sep=""
 let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
 " Theme
-colorscheme molokai
-let g:airline_theme="dark"
+colorscheme base16-railscasts
+let g:airline_theme="base16"
 
+" Ignore
+set wildignore+=*~,*.sw?
+set wildignore+=*.tar.*,*.tgz
+set wildignore+=.DS_Store
+set wildignore+=node_modules/*,*.min.js               " Javascript
+set wildignore+=*.pyc,dist/*,build/*,*.egg-info,*.egg " Python
