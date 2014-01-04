@@ -35,7 +35,10 @@ set linespace=3
 set scrolloff=3
 set cursorline
 
-set relativenumber 
+set backspace=2
+set laststatus=2
+
+set relativenumber
 set number
 
 " Enable mouse events
@@ -49,11 +52,14 @@ map <ScrollWheelDown> <C-E>
 nmap <Tab> :CtrlPBuffer<CR>
 map <C-h> :CtrlPLine<CR>
 imap <S-Tab> <Esc><<i
+nmap - :NERDTreeToggle<CR>
 
 " Subsettings
-let g:netrw_liststyle=3
+let NERDTreeShowBookmarks=1
+let g:sneak#streak=1
+let g:user_emmet_mode='a'
+let g:user_emmet_leader_key='<Leader><Leader>'
 
-set laststatus=2
 let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#virtualenv#enabled=1
 let g:airline_powerline_fonts=0
