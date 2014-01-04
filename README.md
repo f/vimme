@@ -11,3 +11,9 @@ ln -s ~/.vimme/.vimrc .vimrc
 ln -s ~/.vimme/.vim .vim
 vim +BundleInstall +qall # don't worry about colorscheme warning, go on
 ```
+
+## Setting TMUX
+```bash
+ln -s ~/.vimme/.tmux.conf .tmux.conf
+ln -s ~/.vimme/.tmuxline.conf .tmuxline.conf
+```

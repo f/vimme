@@ -60,11 +60,13 @@ let g:sneak#streak=1
 let g:user_emmet_mode='a'
 let g:user_emmet_leader_key='<Leader><Leader>'
 
+let g:airline_powerline_fonts=0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:tmuxline_powerline_separators=0
+
 let g:airline#extensions#syntastic#enabled=1
 let g:airline#extensions#virtualenv#enabled=1
-let g:airline_powerline_fonts=0
-let g:airline_left_sep=""
-let g:airline_right_sep=""
 let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
