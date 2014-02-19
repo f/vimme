@@ -71,8 +71,8 @@ let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
 " Theme
-colorscheme base16-railscasts
-let g:airline_theme="base16"
+colorscheme railscasts
+let g:airline_theme="bubblegum"
 
 " Ignore
 set wildignore+=*~,*.sw?
@@ -80,3 +80,11 @@ set wildignore+=*.tar.*,*.tgz
 set wildignore+=.DS_Store
 set wildignore+=node_modules/*,*.min.js               " Javascript
 set wildignore+=*.pyc,dist/*,build/*,*.egg-info,*.egg " Python
+
+" Autofiletype
+autocmd BufNewFile,BufReadPost *.less set ft=less
+
+" Code Control
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+

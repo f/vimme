@@ -1,0 +1,11 @@
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:$PATH
+export PROJECT_HOME=$HOME/Code
+
+export EDITOR="vim"
+
+VENV="/usr/local/bin/virtualenvwrapper.sh"
+
+if [ -f $VENV ]; then
+  source $VENV
+fi
+
