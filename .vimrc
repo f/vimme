@@ -71,8 +71,10 @@ let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
 " Theme
-colorscheme railscasts
+colorscheme molokai
 let g:airline_theme="bubblegum"
+let g:molokai_original=1
+let g:rehash256=1
 
 " Ignore
 set wildignore+=*~,*.sw?
