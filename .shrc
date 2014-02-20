@@ -9,3 +9,5 @@ if [ -f $VENV ]; then
   source $VENV
 fi
 
+alias gettmux="~/.vimme/tmux.sh"
+alias vim="reattach-to-user-namespace vim +'set clipboard=unnamed'"

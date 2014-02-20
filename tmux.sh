@@ -1,7 +1,8 @@
-tmux has-session 2> /dev/null
+tmux=/usr/local/bin/tmux
+$tmux has-session 2> /dev/null
 if [ $? == 0 ]
 then
-  tmux attach
+  $tmux attach
 else
-  tmux new-session
+  $tmux new-session
 fi
