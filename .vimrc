@@ -72,7 +72,7 @@ let g:airline_detect_modified=1
 
 " Theme
 colorscheme molokai
-let g:airline_theme="bubblegum"
+let g:airline_theme="badwolf"
 let g:molokai_original=1
 let g:rehash256=1
 
