@@ -71,10 +71,11 @@ let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
 " Theme
-colorscheme molokai
+colorscheme solarized
 let g:airline_theme="badwolf"
 let g:molokai_original=1
 let g:rehash256=1
+hi Normal ctermbg=None
 
 " Ignore
 set wildignore+=*~,*.sw?
@@ -87,6 +88,6 @@ set wildignore+=*.pyc,dist/*,build/*,*.egg-info,*.egg " Python
 autocmd BufNewFile,BufReadPost *.less set ft=less
 
 " Code Control
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+hi OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
