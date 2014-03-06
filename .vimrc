@@ -58,7 +58,7 @@ nmap - :NERDTreeToggle<CR>
 let NERDTreeShowBookmarks=1
 let g:sneak#streak=1
 let g:user_emmet_mode='a'
-let g:user_emmet_leader_key='<Leader><Leader>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
@@ -87,6 +87,11 @@ set wildignore+=*.pyc,dist/*,build/*,*.egg-info,*.egg " Python
 autocmd BufNewFile,BufReadPost *.less set ft=less
 
 " Code Control
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=red guibg=#592929
 match OverLength /\%81v.\+/
 
+if has('gui_running')
+  set guioptions-=rL
+  set guifont=Monaco:h13
+  set clipboard=unnamed
+endif
