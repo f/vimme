@@ -9,5 +9,6 @@ if [ -f $VENV ]; then
   source $VENV
 fi
 
-alias tmux="$HOME/.vimme/tmux.sh"
-alias vim="reattach-to-user-namespace vim +'set clipboard=unnamed'"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8

@@ -11,7 +11,6 @@ source ~/.vim/bundles.vim
 set encoding=utf-8
 set fileencodings=utf-8
 
-set autochdir
 set autoindent
 set smartindent
 set cindent
@@ -86,6 +85,8 @@ set wildignore+=*.pyc,dist/*,build/*,*.egg-info,*.egg " Python
 
 " Autofiletype
 autocmd BufNewFile,BufReadPost *.less set ft=less
+autocmd BufNewFile,BufReadPost *.coffee set ft=coffee
+autocmd BufNewFile,BufReadPost *.scss set ft=scss
 
 " Code Control
 hi OverLength ctermbg=red ctermfg=white guibg=#592929

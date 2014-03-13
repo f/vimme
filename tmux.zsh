@@ -1,1 +1,0 @@
-tmux attach || tmux new
