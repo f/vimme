@@ -91,3 +91,8 @@ autocmd BufNewFile,BufReadPost *.less set ft=less
 hi OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+if has('gui_running')
+  set guioptions-=rL
+  set guifont=Monaco:h13
+  set clipboard=unnamed
+endif
