@@ -16,3 +16,5 @@ fi
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+alias ls="ls -FG"

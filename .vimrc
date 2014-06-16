@@ -71,8 +71,13 @@ let g:airline#extensions#virtualenv#enabled=1
 let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:15,results:15'
+
+command Bash ConqueTermSplit bash --init-file ~/.bash_profile
+map <S-Down> :Bash<CR>
+
 " Theme
-colorscheme solarized
+colorscheme molokai
 let g:airline_theme="badwolf"
 let g:molokai_original=1
 let g:rehash256=1
@@ -91,11 +96,28 @@ autocmd BufNewFile,BufReadPost *.coffee set ft=coffee
 autocmd BufNewFile,BufReadPost *.scss set ft=scss
 
 " Code Control
-hi OverLength ctermbg=red ctermfg=white guibg=#592929
+hi OverLength term=underline cterm=underline gui=undercurl guisp=Orange 
 match OverLength /\%81v.\+/
+
+" 3 esc buffer close, wow easy.
+map <silent> <esc><esc><esc> :bd<CR>
+imap <silent> <esc><esc><esc> <esc>:bd<CR>
+
+" clear search
+map <silent> <space><space> :let @/=''<CR>
+
+" keep blocks selected when indenting
+vnoremap < <gv
+vnoremap > >gv
 
 if has('gui_running')
   set guioptions-=rL
-  set guifont=Monaco:h13
+  set guifont=Menlo:h16
   set clipboard=unnamed
+  if has('gui_macvim')
+    set macmeta
+    set fuopt=maxvert,maxhorz
+  endif
 endif
+
+source ~/.vim/functions.vim
