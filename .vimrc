@@ -40,6 +40,9 @@ set laststatus=2
 set relativenumber
 set number
 
+" Per Project Vimrc
+set exrc
+
 " Enable mouse events
 if has("mouse")
   set mouse=a
@@ -58,8 +61,8 @@ let NERDTreeShowBookmarks=1
 let g:sneak#streak=1
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-autocmd FileType html,css imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+autocmd FileType html,css,scss,less,eruby EmmetInstall
+autocmd FileType html,css,scss,less,eruby imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
@@ -71,10 +74,12 @@ let g:airline#extensions#virtualenv#enabled=1
 let g:airline_detect_paste=1
 let g:airline_detect_modified=1
 
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:15,results:15'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:5,results:15'
+let g:netrw_liststyle=3
 
 command Bash ConqueTermSplit bash --init-file ~/.bash_profile
-map <S-Down> :Bash<CR>
+map <silent> <S-Down> :Bash<CR>
+map <silent> <C-D-Space> :Dash<CR>
 
 " Theme
 colorscheme molokai
@@ -95,6 +100,14 @@ autocmd BufNewFile,BufReadPost *.less set ft=less
 autocmd BufNewFile,BufReadPost *.coffee set ft=coffee
 autocmd BufNewFile,BufReadPost *.scss set ft=scss
 
+" Omni Completion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+
 " Code Control
 hi OverLength term=underline cterm=underline gui=undercurl guisp=Orange 
 match OverLength /\%81v.\+/
@@ -106,13 +119,15 @@ imap <silent> <esc><esc><esc> <esc>:bd<CR>
 " clear search
 map <silent> <space><space> :let @/=''<CR>
 
+inoremap <expr> <C-D-Space> "\<C-X>\<C-O>"
+
 " keep blocks selected when indenting
 vnoremap < <gv
 vnoremap > >gv
 
 if has('gui_running')
   set guioptions-=rL
-  set guifont=Menlo:h16
+  set guifont=Monaco:h13
   set clipboard=unnamed
   if has('gui_macvim')
     set macmeta
@@ -121,3 +136,4 @@ if has('gui_running')
 endif
 
 source ~/.vim/functions.vim
+
